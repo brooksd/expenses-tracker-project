@@ -1,2 +1,1 @@
-class ExpensesController < ApplicationController
-end
+
