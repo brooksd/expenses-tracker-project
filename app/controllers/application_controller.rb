@@ -13,7 +13,7 @@ class ApplicationController < ActionController::API
     def authorize
     @current_user = User.find_by(id: session[:user_id])
 
-    render json: { errors: ["Not authorized"] }, status: :unauthorized unless @current_user
+    render json: { errors: ["Sorry, You are Not authorized"] }, status: :unauthorized unless @current_user
     end
 
 
@@ -23,6 +23,6 @@ class ApplicationController < ActionController::API
 
 
     def render_record_not_found
-    render json: {error: ["Not Found"] }, status: :not_found
+    render json: {error: ["Sorry, Record requested Not Found"] }, status: :not_found
     end
 end
