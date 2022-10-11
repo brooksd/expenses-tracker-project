@@ -1,10 +1,10 @@
 class ExpensesController < ApplicationController
-    before_action :user_authorized_to_see
+    before_action :user_authorized_to_view
 
     def index
         user = user_find_params
         expenses = user.expenses
-        render json: expenses, status: :ok
+        render json: expenses, each_serializer: ExpenseSerializer, status: :ok
     end
 
     def show
@@ -46,7 +46,7 @@ class ExpensesController < ApplicationController
         params.require(:expense).permit(:id, :amount, :user_id, :category_id, :date)
     end
 
-    def user_authorized_to_see
+    def user_authorized_to_view
         user = user_find_params
         user_permitted = @current_user.id == user.id
         render json: { error: "You are not Authorized to view other's expenses" }, status: :forbidden unless user_permitted

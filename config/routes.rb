@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   #main controllers 
   resources :users, only: [:index, :create, :update ] do
-    resources :expenses, only [:index, :create, :show, :update, :destroy]
+    resources :expenses, only: [:index, :create, :show, :update, :destroy]
   end
-  resources :categories, only[:index]
+  resources :categories, only: [:index]
 end
