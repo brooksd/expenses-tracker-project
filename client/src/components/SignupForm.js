@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { useHistory } from "react-router-dom";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
+import Error from './Error';
 
 const SignupForm = ( { onLogin } ) => {
   const history = useHistory()
