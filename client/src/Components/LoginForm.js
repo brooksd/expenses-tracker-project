@@ -46,7 +46,7 @@ const LoginForm = ({onLogin, user}) => {
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col-md-9 col-lg-6 col-xl-5">
             <img
-              src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+              src="../images/undraw_Investing.png"
               className="img-fluid"
               alt=""
             />
@@ -84,12 +84,12 @@ const LoginForm = ({onLogin, user}) => {
                 <p className="text-center rounded" style={{ color: "red" }}>
                   {errors}
                 </p>
-                <p className="text-info mt-5 p-3 text-center rounded">
-                  If you dont have an account
+                <p className="text-info mt-3 p-3 text-center rounded">
+                  If you dont have an account:
+                    <Link to="/sign">
+                     Sign up
+                    </Link>
                 </p>
-                <Link to="/sign" className="btn btn-info">
-                  Sign up
-                </Link>
               </Row>
             </Form>
           </div>
