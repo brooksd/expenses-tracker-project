@@ -1,6 +1,42 @@
-import React from 'react'
+import React, { useState } from 'react';
+import { Modal, Form, ModalBody, FormGroup, FormLabel, FormControl, Button } from "react-bootstrap";
 
-const AddExpense = () => {
+const AddExpense = ({ show, setShow, handleClose, expense, onAddExpense, user }) => {
+     
+    const [ newAmount, setNewAmount ] = useState("")
+    const [errors, setErrors ] = useState([]);
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+
+        let number_1=expense.amount
+        let number_2 = Number(newAmount)
+        let newNumber = number_1 + number_2
+
+        const updatedExpense = {
+            amount: newNumber
+        } 
+        console.log(updatedExpense)
+
+        fetch(`/users/${user.id}/expenses/${expense.id}`, {
+        method: "PATCH",
+        headers:{
+        "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updatedExpense),
+        }).then((res) => {
+        if (res.ok) {
+          res.json().then((updatedExpense) => {
+            setNewAmount("");
+            setErrors([]);
+           onAddExpense(updatedExpense);
+          });
+        } else {
+          res.json().then((err) => setErrors(err.errors));
+        }
+      })
+      setShow(false)
+    }
   return (
     <Modal show={show}>
         <Form className="mt-3 mb-3">
