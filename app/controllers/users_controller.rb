@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     end
     
     def show
-        redner json: @current_user
+        render json: @current_user
     end
 
     private 

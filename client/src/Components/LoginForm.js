@@ -53,7 +53,7 @@ const LoginForm = ({onLogin, user}) => {
             />
           </div>
           <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-            <h1 className=" text-primary mt-5 p-3 text-center rounded"> Login Here</h1>
+            <h1 className=" text-primary mt-5 p-3 text-center rounded"> Login Here </h1>
             <Form>
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>Username</Form.Label>
