@@ -5,6 +5,7 @@ import ExpenseCard from "./ExpenseCard"
 import CreateExpense from "./CreateExpense";
 import useFetch from "./useFetch";
 import { useHistory} from "react-router-dom";
+import "./Sidebar.css";
 
 const Home = ({setUser, user}) => {
     
@@ -98,12 +99,65 @@ const Home = ({setUser, user}) => {
 
 
     return (
-      <Container className="my-3">
-        <Button variant="info" onClick={handleShow}>
+      <Container className="m-0 p-0 container-fluid">
+        <div className="row d-flex h-100 ">
+          <div className="col-3 bg-primary border border-danger m-0">
+            <div class="wrapper">
+            <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Bootstrap Sidebar</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <p>Dummy Heading</p>
+                <li class="active">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="#">Home 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Home 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Home 3</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="#">Page 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 3</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Portfolio</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+          </nav>
+          </div>
+          </div>
+          <div className="col-8 border border-primary m-1">
+
+        <Button variant="primary" onClick={handleShow}>
           {" "}
           Create Expense
         </Button>
-        <Button variant="info" onClick={handleLogout} className="float-end">
+        <Button variant="primary" onClick={handleLogout} className="float-end">
           Log Out
         </Button>
         <CreateExpense
@@ -209,7 +263,9 @@ const Home = ({setUser, user}) => {
         </Row>
         <StyledTotal>
           Total: ${total} in {month}{" "}
-        </StyledTotal>
+          </StyledTotal>
+          </div>
+        </div>
       </Container>
     );
 }
