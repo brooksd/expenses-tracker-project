@@ -44,15 +44,16 @@ const LoginForm = ({onLogin, user}) => {
     return (
       <Container className="container-fluid h-custom">
         <div className="row d-flex justify-content-center align-items-center h-100">
-          <div className="col-md-9 col-lg-6 col-xl-5">
+          <div className="col-md-9 col-lg-6 col-xl-5 mt-5">
+            <h2 className=" mt-3 p-2 text-center rounded"> Mashimoni Expense Tracker </h2>
             <img
-              src="../images/undraw_Investing.png"
-              className="img-fluid"
-              alt=""
+              src="https://img.freepik.com/free-vector/man-with-tablet-little-schoolgirl_107791-1187.jpg?w=826&t=st=1665665333~exp=1665665933~hmac=388f7fde69cbdf3c602834bacd39140040fd493540e101398e4ce9684cb75a13"
+                 height={350} width={650}
+              alt="login_image"
             />
           </div>
           <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-            <h1 className=" text-info mt-5 p-3 text-center rounded"> Login</h1>
+            <h1 className=" text-info mt-5 p-3 text-center rounded"> Login Here</h1>
             <Form>
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>Username</Form.Label>
