@@ -1,13 +1,13 @@
 import {Modal, Form, ModalBody, FormGroup, FormLabel, FormControl, Button } from "react-bootstrap"
 import React, {useState} from "react"
-import useFetch from "./useFetch";
+import Fetch from "./Fetch";
 
 const CreateExpense = ({ show, setShow, handleClose, user, onCreateExpense }) => {
     const [amount, setAmount] = useState(" ")
     const [category, setCategory] = useState("")
     const [month, setMonth] = useState("")
 
-    const {data: categories, isPending, error} = useFetch("/categories")
+    const {data: categories, isPending, error} = Fetch("/categories")
 
     function handleSubmit(e){
      e.preventDefault()
