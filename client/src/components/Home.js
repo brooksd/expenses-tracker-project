@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Container, Button,  Row, Stack} from "react-bootstrap"
 import styled from "styled-components"
 import ExpenseCard from "./ExpenseCard"
@@ -15,13 +15,13 @@ const Home = ({ user, setUser }) => {
     const date = `${currentYear}-${currentMonth<10?`0${currentMonth}`:`${currentMonth}`}`
     
     const history = useHistory()
-    const [show, setShow] = useState(false);
-    const[month, setMonth] = useState(date)
+    const [ show, setShow ] = useState(false);
+    const [ month, setMonth ] = useState(date)
     const handleShow = () => setShow(true);
     const handleClose = () => setShow(false);
 
     
-    const {data: expenses, setData: setExpenses, isPending, error} = useFetch(`/users/${user.id}/expenses`)
+    const {data: expenses, setData: setExpenses, isPending, error} = Fetch(`/users/${user.id}/expenses`)
 
     function handleMonthClick(e){
     setMonth(e.target.value) 
