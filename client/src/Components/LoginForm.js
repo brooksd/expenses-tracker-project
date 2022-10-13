@@ -53,7 +53,7 @@ const LoginForm = ({onLogin, user}) => {
             />
           </div>
           <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-            <h1 className=" text-info mt-5 p-3 text-center rounded"> Login Here</h1>
+            <h1 className=" text-primary mt-5 p-3 text-center rounded"> Login Here</h1>
             <Form>
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>Username</Form.Label>
@@ -76,7 +76,7 @@ const LoginForm = ({onLogin, user}) => {
                 <Button
                   as={Col}
                   className="mx-2"
-                  variant="info"
+                  variant="primary"
                   type="submit"
                   onClick={handleSubmit}
                 >
@@ -85,8 +85,8 @@ const LoginForm = ({onLogin, user}) => {
                 <p className="text-center rounded" style={{ color: "red" }}>
                   {errors}
                 </p>
-                <p className="text-info mt-3 p-3 text-center rounded">
-                  If you dont have an account:
+                <p className="fo mt-3 p-3 text-center rounded">
+                  If you don't have an account:
                     <Link to="/sign">
                      Sign up
                     </Link>
