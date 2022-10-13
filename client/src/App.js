@@ -1,53 +1,23 @@
-import React, { useEffect, useState } from "react";
-import { Route, Switch, useHistory } from "react-router-dom";
-import SignupForm from './components/SignupForm';
-import LoginForm from './components/LoginForm';
-import NavBar from "./components/NavBar";
-import Home from "./components/Home";
+import logo from './logo.svg';
+import './App.css';
 
 function App() {
-  
-  const [user, setUser] = useState(null);
-  let history = useHistory();
-  
-  useEffect(() => {
-  fetch("/me").then((res) => {
-   if (res.ok) {
-    res.json().then((user) => setUser(user));
-    }
-   });
-  }, []);
-
-
-  function onLogin(loguser){
-    setUser(loguser)
-    history.push("/home")
-  }
-
-  if (!user){
-    return <div>
-      <Switch>
-        <Route exact path="/">
-          <LoginForm onLogin={onLogin} user={user}/>
-        </Route>  
-        <Route exact path="/sign">
-          <SignupForm onLogin={onLogin}/>
-        </Route>
-      </Switch>
-    </div>
-  }
-
   return (
     <div className="App">
-      Hello From React, Brooks
-      <NavBar user={user} />
-      <Switch>
-        <Route
-          exact
-          path="/home"
-          component={() => <Home setUser={setUser} user={user} />}
-        />
-      </Switch>
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
     </div>
   );
 }
