@@ -2,7 +2,19 @@ import React, { useState } from 'react'
 import AddExpense from "./AddExpense";
 import {Card, Stack, Button} from "react-bootstrap"
 
-const ExpenseCard = () => {
+const ExpenseCard = ({expense, onAddExpense, user, onDelete}) => {
+
+    const [show, setShow] = useState(false)
+    const handleShow = () => setShow(true);
+    const handleClose = () => setShow(false);
+
+    const handleDelete = () => {
+    fetch(`/users/${user.id}/expenses/${expense.id}`,{
+        method: "DELETE",
+    })
+    onDelete(expense.id)
+    }
+    
   return (
     <Card border="info" style={{ width: '18rem' }}>
         <h2>${expense.amount}</h2>
