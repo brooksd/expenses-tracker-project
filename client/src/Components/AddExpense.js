@@ -61,7 +61,7 @@ return(
          </ModalBody>
          <Button variant="info" onClick={handleSubmit} > Create</Button>
         </Form >
-        </Modal>
+      </Modal>
 )
 }
 

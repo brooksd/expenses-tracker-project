@@ -101,17 +101,17 @@ const Home = ({setUser, user}) => {
     return (
       <Container className="m-0 p-0 container">
         <div className="row d-flex h-100 ">
-          <div className="col-3 bg-primary border border-danger m-0">
+          <div className="col-3 bg-primary m-0">
             <div class="wrapper">
             <nav id="sidebar">
-            <div class="sidebar-header">
-                <h3>Bootstrap Sidebar</h3>
+            <div class="image" className="mt-3 mx-5">
+                <img src="https://www.pngall.com/wp-content/uploads/5/Profile-Male-PNG.png" height={180} width={180}alt="profile"/>
             </div>
 
-            <ul class="list-unstyled components">
-                <p>Dummy Heading</p>
+            <ul class="list-unstyled components" className="text-center mt-4">
+                <h3>{user.first_name}{user.last_name}</h3>
                 <li class="active">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+                    <>Home</>
                 </li>
                 <li>
                     <>About</>
@@ -129,7 +129,7 @@ const Home = ({setUser, user}) => {
           </nav>
           </div>
           </div>
-          <div className="col-8 border border-primary m-1">
+          <div className="col-8 m-1">
 
         <Button variant="primary" onClick={handleShow}>
           {" "}
@@ -240,7 +240,7 @@ const Home = ({setUser, user}) => {
           {oneExpense}
         </Row>
         <StyledTotal>
-          Total: ${total} in {month}{" "}
+          Total: Ksh. {total} in {month}{" "}
           </StyledTotal>
           </div>
         </div>
