@@ -53,9 +53,9 @@ function CreateExpense({show, setShow, handleClose, user, onCreateExpense}) {
                 <Form.Label>Select Date</Form.Label>
                 <Form.Control type="month" name="date" placeholder="Date" onChange={(e)=>setMonth(e.target.value)}/>
             </Form.Group>
-             <Button variant="info" onClick={handleClose}> Close</Button>
+             <Button variant="primary" onClick={handleClose}> Close</Button>
          </ModalBody>
-         <Button variant="info" onClick={handleSubmit}> Create</Button>
+         <Button variant="primary" onClick={handleSubmit}> Create</Button>
         </Form >
         </Modal>
     )

@@ -114,10 +114,10 @@ const Home = ({setUser, user}) => {
                     <>Home</>
                 </li>
                 <li>
-                    <>About</>
+                    <>Reports</>
                 </li>
                 <li>
-                    <>Pages</>
+                    <>Chart Summary</>
                 </li>
                 <li>
                     <>Portfolio</>
