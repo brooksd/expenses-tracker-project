@@ -3,8 +3,8 @@
    ## By Donald Brooks
 
 ## Screenshot
-   ![image](./src/images/login.png)
-   ![image](./src/images/signup.png)
+   ![image](./client/src/images/login.png)
+   ![image](./client/src/images/signup.png)
 
 ## Table of Content
 
@@ -82,6 +82,3 @@ SOFTWARE.
 ## Authors Info
 
 LinkedIn - [Donald Brooks](https://www.linkedin.com/brooksdonald/)
-
-
-# ENJOY AND TAKE TIME TO LEARN CODING
