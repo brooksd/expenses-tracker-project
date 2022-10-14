@@ -8,7 +8,7 @@ class ExpensesController < ApplicationController
     end
 
     def show
-        expenses = expense_find_params
+        expenses = Expense.find(params[:id])
         render json: expenses
     end
 
@@ -19,7 +19,7 @@ class ExpensesController < ApplicationController
     end
 
     def update
-        expense = expense_find_params
+        expense = Expense.find(params[:id])
         update_expense = expense.update!(expense_params)
         render json: expense
     end
@@ -27,16 +27,16 @@ class ExpensesController < ApplicationController
     def destroy
         user = User.find(params[:user_id])
         expense = user.expenses
-        expense = expense_find_params
+        expense = Expense.find(params[:id])
         expense.destroy
         head :no_content
     end
 
     private
 
-    def expense_find_params
-        Expense.find(params[:id])
-    end
+    # def expense_find_params
+    #     Expense.find(params[:id])
+    # end
 
     # def user_find_params
     #     User.find(params[:user_id])

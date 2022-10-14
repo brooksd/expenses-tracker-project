@@ -69,7 +69,7 @@ const Home = ({setUser, user}) => {
 
     let oneExpense = expenses
       .filter((expense) => {
-        if (expense.date === month) {
+        if (expense.date == month) {
           return expense;
         }
       })
@@ -87,7 +87,7 @@ const Home = ({setUser, user}) => {
 
     const total = expenses
       .filter((expense) => {
-        if (expense.date === month) {
+        if (expense.date == month) {
           return expense;
         }
       })
@@ -114,16 +114,16 @@ const Home = ({setUser, user}) => {
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
                 </li>
                 <li>
-                    <a href="#">About</a>
+                    <>About</>
                 </li>
                 <li>
-                    <a href="#pageSubmenu">Pages</a>
+                    <>Pages</>
                 </li>
                 <li>
-                    <a href="#">Portfolio</a>
+                    <>Portfolio</>
                 </li>
                 <li>
-                    <a href="#">Contact</a>
+                    <>Contact</>
                 </li>
             </ul>
           </nav>
